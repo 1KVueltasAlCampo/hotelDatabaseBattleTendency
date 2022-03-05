@@ -6,7 +6,8 @@ CREATE TABLE Hotel
   CREATE TABLE Guest
   ( guestNo INT NOT NULL UNIQUE PRIMARY KEY,
     guestName VARCHAR(85),
-    guestAddress VARCHAR(85)
+    guestAddress VARCHAR(85),
+    guestCity VARCHAR(85)
   );
   CREATE TABLE Room
   ( hotelNo INT NOT NULL UNIQUE,
@@ -43,19 +44,17 @@ CREATE TABLE Hotel
   INSERT INTO Hotel VALUES(009,'el viajero programador','Armenia');
   INSERT INTO Hotel VALUES(010,'el viajero de Polombia','Bogota');
   
-  INSERT INTO Guest VALUES(001,'Juan','Cra 21 # 34-66');
-  INSERT INTO Guest VALUES(002,'Sebastian','Cll 13 # 28-18');
-  INSERT INTO Guest VALUES(003,'David','Cra 38 # 30-12');
-  INSERT INTO Guest VALUES(004,'Nicolas','Cra 06 # 12-56');
-  INSERT INTO Guest VALUES(005,'Santiago','Cll 20 # 15-80');
-  INSERT INTO Guest VALUES(006,'Valentina','Cra 32 # 50-12');
-  INSERT INTO Guest VALUES(007,'Catherine','Cra 38 # 60-62');
-  INSERT INTO Guest VALUES(008,'Isabela','Cra 48 # 21-12');
-  INSERT INTO Guest VALUES(009,'Jose','Cra 52 # 31-72');
-  INSERT INTO Guest VALUES(010,'Paula','Cra 18 # 42-12');
+  INSERT INTO Guest VALUES(001,'Paula','Cra 21 # 34-66', 'Cali');
+  INSERT INTO Guest VALUES(002,'Sebastian','Cll 13 # 28-18', 'Buenaventura');
+  INSERT INTO Guest VALUES(003,'David','Cra 38 # 30-12', 'Zarzal');
+  INSERT INTO Guest VALUES(004,'Nicolas','Cra 06 # 12-56', 'Dagua');
+  INSERT INTO Guest VALUES(005,'Santiago','Cll 20 # 15-80', 'Jamundí');
+  INSERT INTO Guest VALUES(006,'Valentina','Cra 32 # 50-12', 'Guadalajara de Buga');
+  INSERT INTO Guest VALUES(007,'Catherine','Cra 38 # 60-62', 'Candelaria');
+  INSERT INTO Guest VALUES(008,'Isabela','Cra 48 # 21-12', 'Medellín');
+  INSERT INTO Guest VALUES(009,'Jose','Cra 52 # 31-72', 'Bogotá');
+  INSERT INTO Guest VALUES(010,'Juan','Cra 18 # 42-12','Cali');
   
-  --INSERT INTO Room VALUES(001,001,'personal',200); Falla porque price es mayor a 100. Para corregir esto ahora los valores estaran dentro del intervalo
-  --INSERT INTO Room VALUES(001,001,'personal',100); Falla porque las categoria no esta en el conjunto {Single,Double,Family}. Para corregir esto ahora se pondran en el conjunto adecuado.
   INSERT INTO Room VALUES(001,001,'Single',50);
   INSERT INTO Room VALUES(002,002,'Family',10);
   INSERT INTO Room VALUES(003,003,'Double',24);
@@ -65,10 +64,8 @@ CREATE TABLE Hotel
   INSERT INTO Room VALUES(007,007,'Single',21);
   INSERT INTO Room VALUES(008,008,'Family',89);
   INSERT INTO Room VALUES(009,009,'Single',50);
-  --INSERT INTO Room VALUES(010,010,'Single',3); Falla porque el precio no esta entre 10 y 100
   INSERT INTO Room VALUES(010,010,'Single',33);
   
-  --INSERT INTO Booking VALUES(001,001,'01/05/2022','03/05/2022',001); Falla por el formato de fecha
   INSERT INTO Booking VALUES(001,001,'2022-05-10','2022-05-11',005);
   INSERT INTO Booking VALUES(002,002,'2022-05-11','2022-05-12',004);
   INSERT INTO Booking VALUES(003,003,'2022-05-13','2022-05-14',005);
